@@ -1,5 +1,6 @@
 class ExpireProductsHooks < Spree::ThemeSupport::HookListener
 
+  insert_after :admin_product_form_right, 'shared/expire_date'
   #
   # In this file you can modify the content of the hooks available in the default templates
   # and avoid overriding a template in many situations. Multiple extensions can modify the

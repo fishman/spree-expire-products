@@ -3,7 +3,7 @@
 
 class ExpireProductsExtension < Spree::Extension
   version "1.0"
-  description "Describe your extension here"
+  description "Extend Products by expire method"
   url "http://yourwebsite.com/expire_products"
 
   # Please use expire_products/config/routes.rb instead for extension routes.
@@ -13,10 +13,9 @@ class ExpireProductsExtension < Spree::Extension
   # end
   
   def activate
-
-    # make your helper avaliable in all views
-    # Spree::BaseController.class_eval do
-    #   helper YourHelper
-    # end
+    # extend product
+    Product.class_eval do
+      named_scope :available,   lambda { |*args| { :conditions => ["products.available_on <= ? and (products.expires_on is null or products.expires_on >= ?)", args.first || Time.zone.now, args.first || Time.zone.now] } }
+      end
   end
 end
