@@ -1,0 +1,7 @@
+---
+en-US:
+  expires_on: "Expires On"
+  activerecord:
+    attributes:
+      product:
+        expires_on: "Expires On"

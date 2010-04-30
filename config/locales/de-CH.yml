@@ -1,0 +1,7 @@
+--- 
+de-CH: 
+  expires_on: "Gültig bis"
+  activerecord:
+    attributes:
+      product:
+        expires_on: "Gültig bis"
