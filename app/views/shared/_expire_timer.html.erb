@@ -1,0 +1,12 @@
+<% unless @product.expires_on.nil? %>
+  <style type="text/css">
+    #defaultCountdown { width: 240px; height: 45px; }
+  </style>
+  <script type="text/javascript">
+    $(function () {
+      var austDay = new Date();
+      $('#defaultCountdown').countdown({until: <%= @product.expires_on.to_i - Time.now.to_i %>});
+    });
+  </script>
+  <div id='defaultCountdown'></div>
+<% end %>

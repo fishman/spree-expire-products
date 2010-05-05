@@ -1,14 +1,10 @@
 class ExpireProductsHooks < Spree::ThemeSupport::HookListener
 
+  insert_after :inside_head, 'shared/jquery_countdown'
+
   insert_after :admin_product_form_right, 'shared/expire_date'
-  #
-  # In this file you can modify the content of the hooks available in the default templates
-  # and avoid overriding a template in many situations. Multiple extensions can modify the
-  # same hook, the changes being applied cumulatively based on extension load order
-  #
-  # Most hooks are defined with blocks so they span a region of the template, allowing content
-  # to be replaced or removed as well as added to.
-  #
+  insert_before :inside_product_cart_form, 'shared/expire_timer'
+
   # Usage
   #
   # The following methods are available
