@@ -4,7 +4,7 @@
 class ExpireProductsExtension < Spree::Extension
   version "1.0"
   description "Extend Products by expire method"
-  url "http://yourwebsite.com/expire_products"
+  url "http://github.com/fishman/spree-expire-products"
 
   # Please use expire_products/config/routes.rb instead for extension routes.
 
